@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 
 from pathlib import Path
 import os
+
 import firebase_admin
 from firebase_admin import credentials
 
@@ -23,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-5y566_*(e%d_^2@erpe#m@fjc7!zf#3$yq@=8-#r_phkwzpz^l"
+SECRET_KEY = "django-insecure-a8k3esvmekxd@(y2(sd^r%+l6l+a_#j_b+e4@o=&zq9zg0v*f@"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -40,13 +41,11 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    #guia 20
-    "rest_framework",
-    "homepage",
-    "demo_rest_api",
-    #guia 21
     "firebase_admin",
-    "landing_api"
+    "rest_framework",
+    "demo_rest_api",
+    'landing_api',
+    "homepage",
 ]
 
 MIDDLEWARE = [
@@ -121,7 +120,6 @@ USE_I18N = True
 USE_TZ = True
 
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
@@ -130,7 +128,6 @@ STATIC_URL = "static/"
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, STATIC_URL),
 ]
-
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
@@ -141,5 +138,5 @@ FIREBASE_CREDENTIALS_PATH = credentials.Certificate("secrets/landing-key.json")
 
 # Inicialice la conexión con el Realtime Database con la clave privada y la URL de referencia
 firebase_admin.initialize_app(FIREBASE_CREDENTIALS_PATH, {
-   'databaseURL': 'https://landing-646fc-default-rtdb.firebaseio.com/'
+   'databaseURL': 'https://landing-page-9c277-default-rtdb.firebaseio.com/'
 })
