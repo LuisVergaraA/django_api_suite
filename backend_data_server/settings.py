@@ -29,7 +29,12 @@ SECRET_KEY = "django-insecure-a8k3esvmekxd@(y2(sd^r%+l6l+a_#j_b+e4@o=&zq9zg0v*f@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['luvearel.pythonanywhere.com']
+ALLOWED_HOSTS = [
+    'luvearel.pythonanywhere.com',
+    '127.0.0.1', 
+    'localhost',
+    '*'  # Para desarrollo
+]
 
 
 # Application definition
